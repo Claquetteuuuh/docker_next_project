@@ -1,8 +1,8 @@
-# Platine Client
+# Claquetteuuh Client
 ## Set up
 3) Clone the project:
 ```bash
-git clone https://forge.univ-lyon1.fr/but3-ra1/front-end.git
+git clone https://github.com/Claquetteuuuh/docker_next_project.git
 ```
 
 2) Install dependecies:
@@ -12,7 +12,7 @@ npm install
 
 3) Create network
 ```bash
-docker network create platine-network
+docker network create claquetteuuuh-network
 ```
 
 ## Run

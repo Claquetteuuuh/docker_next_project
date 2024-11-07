@@ -1,0 +1,33 @@
+version: '3.8'  
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    command: npm run dev
+    environment:
+      CLAQUETTEUUUH_API_KEY: "key"
+      NEXTAUTH_SECRET: "98E3B2CC28F61492C6934531C828C"
+      NEXTAUTH_URL: "http://localhost:3000/"
+      API_URL: "http://api:3001"
+    networks:
+      - claquetteuuuh-network
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app/src
+          ignore:
+            - node_modules/
+        - action: rebuild
+          path: package.json
+    volumes:
+      - /app/node_modules  
+      
+networks:
+  claquetteuuuh-network:
+    driver: bridge
+    external: true
