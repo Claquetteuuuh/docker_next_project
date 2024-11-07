@@ -26,6 +26,7 @@ services:
           path: package.json
     volumes:
       - /app/node_modules  
+      - .:/app  
       
 networks:
   claquetteuuuh-network:
